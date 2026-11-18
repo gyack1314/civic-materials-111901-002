@@ -42,6 +42,7 @@ class Source:
         rows=[{'id':'P-1','city':'城甲','year':2025,'blob':'/files/common','version':1},{'id':'P-2','city':'城乙','year':2024,'blob':'/files/other','version':1}]
         if self.phase:
             rows=[{'id':'P-3','city':'城甲','year':2025,'blob':'/files/common','version':1},rows[1]]
+        if self.phase>=2:rows[1].update(year=2025,version=2)
         return rows
     def product(self,method,path,q,h,body):
         snaps=self.extra.setdefault('snapshots',{})
